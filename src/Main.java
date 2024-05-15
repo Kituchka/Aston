@@ -3,20 +3,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /*printThreeWords();
+        printThreeWords();
         checkSumSign();
         printColor();
         compareNumbers();
         compareSumOfNumbers();
         positiveOrNegativeNum();
         booleanPositiveOrNegative();
-        stringAndInt();*/
+        stringAndInt();
         leapYear();
-        /*massive();
+        massive();
         cycleHundred();
         massiveDoubleTwo();
         doubleMassive();
-        lastEx(); */
+        lastEx();
     }
 
     public static void printThreeWords() {
