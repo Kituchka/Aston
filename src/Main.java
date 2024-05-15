@@ -3,20 +3,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        printThreeWords();
+        /*printThreeWords();
         checkSumSign();
         printColor();
         compareNumbers();
         compareSumOfNumbers();
         positiveOrNegativeNum();
         booleanPositiveOrNegative();
-        stringAndInt();
+        stringAndInt();*/
         leapYear();
-        massive();
+        /*massive();
         cycleHundred();
         massiveDoubleTwo();
         doubleMassive();
-        lastEx();
+        lastEx(); */
     }
 
     public static void printThreeWords() {
@@ -42,7 +42,7 @@ public class Main {
 
         if (value <= 0) {
             System.out.println("Красный");
-        } else if (value > 0 && value <= 100) {
+        } else if (value <= 100) {
             System.out.println("Желтый");
         } else {
             System.out.println("Зеленый");
@@ -67,9 +67,13 @@ public class Main {
         System.out.println("Введите второе число: ");
         int b = sc.nextInt();
 
-        boolean sum = (a + b) >= 10 && (a + b) <= 20;
-
-        System.out.println(sum);
+        boolean result = false;
+        int sum = a + b;
+        if (sum >= 10 && sum <= 20) {
+            System.out.println(sum);
+        } else {
+            System.out.println(result);
+        }
     }
 
     public static void positiveOrNegativeNum () {
@@ -89,10 +93,17 @@ public class Main {
         System.out.println("Введите целое число: ");
         int num = sc.nextInt();
 
-        boolean number = num >= 0;
+        boolean number;
 
-        System.out.println(number);
+        if (num >= 0) {
+            number = true;
+            System.out.println(num + " положительное число");
+        } else {
+            number = false;
+            System.out.println(num + " отрицательное число");
+        }
     }
+
 
     public static void stringAndInt() {
         Scanner sc = new Scanner(System.in);
@@ -113,11 +124,14 @@ public class Main {
         boolean isLeapYear = true;
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println(isLeapYear);
+        } else {
+            isLeapYear = false;
+            System.out.println(isLeapYear);
         }
     }
 
     public static void massive() {
-        int a[] = {0, 1, 0, 1};
+        int[] a = {0, 1, 0, 1};
         for(int i = 0; i < a.length; i++)
             if (a[i] == 0) {
                 a[i] = 1;
@@ -129,20 +143,17 @@ public class Main {
     }
 
     public static void cycleHundred() {
-        int a[] = new int[100];
-
-        int value = 1;
+        int[] a = new int[100];
 
         for(int i = 0; i < a.length; i++){
-            a[i] = value;
-            value ++;
+            a[i] = i + 1;
         }
 
         System.out.println(Arrays.toString(a));
     }
 
     public static void massiveDoubleTwo() {
-        int a[] = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        int[] a = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
 
 
         for (int i = 0; i < a.length; i++) {
@@ -176,7 +187,7 @@ public class Main {
         System.out.println("Введите значение: ");
         int initialValue = sc.nextInt();
 
-        int a[] = new int[len];
+        int[] a = new int[len];
         for(int i = 0; i < a.length; i++) {
             a[i] = initialValue;
         }
